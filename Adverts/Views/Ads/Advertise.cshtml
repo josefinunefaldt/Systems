@@ -1,0 +1,56 @@
+﻿@model Adverts.Data.Entities.Advertisers;
+
+<form asp-controller="Ads" asp-action="AdvertiserForm" method="post" id="advertiserForm">
+    <div class="form-group">
+        <label asp-for="adv_name">Name:</label>
+        <input type="text" asp-for="adv_name" placeholder="Enter name" class="form-control" />
+        <span asp-validation-for="adv_name" class="text-danger"></span>
+        @if (ViewData["ErrorMessage"] != null)
+        {
+            <div>
+                <p class="text-danger">@ViewData["ErrorMessage"]</p>
+            </div>
+        }
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="adv_organisationNumber">Organisation Number:</label>
+        <input type="text" asp-for="adv_organisationNumber" placeholder="Enter organisation number" class="form-control" />
+        <span asp-validation-for="adv_organisationNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="adv_deliveryAddress">Delivery Address:</label>
+        <input type="text" asp-for="adv_deliveryAddress" placeholder="Enter delivery address" class="form-control" />
+        <span asp-validation-for="adv_deliveryAddress" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="adv_postalCode">Postal Code:</label>
+        <input type="text" asp-for="adv_postalCode" placeholder="Enter postal code" class="form-control" />
+        <span asp-validation-for="adv_postalCode" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="adv_billingAddress">Billing Address:</label>
+        <input type="text" asp-for="adv_billingAddress" placeholder="Enter billing address" class="form-control" />
+        <span asp-validation-for="adv_billingAddress" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="adv_City">City:</label>
+        <input type="text" asp-for="adv_City" placeholder="Enter city" class="form-control" />
+        <span asp-validation-for="adv_City" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="adv_PhoneNumber">Phone Number:</label>
+        <input type="text" asp-for="adv_PhoneNumber" placeholder="Enter phone number" class="form-control" />
+        <span asp-validation-for="adv_PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <!-- Other advertiser fields -->
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

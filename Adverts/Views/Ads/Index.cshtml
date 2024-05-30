@@ -1,0 +1,34 @@
+﻿
+@model Adverts.ViewModel.AdvertViewModel;
+
+<a asp-action="Advertise"  class="btn-outline-dark" asp-controller="Ads">Business ads</a> <br />
+<a asp-action="ExportSubscribers" class="btn-outline-dark" asp-controller="Ads">Export Subscribers</a><br />
+<a asp-action="Import" class="btn-outline-dark" asp-controller="Ads">Import Subscribers</a>
+
+<div class="text-center">
+    <form asp-controller="Ads" asp-action="CheckSubscriber" method="post">
+        <label for="subscriptionNumber">Enter your Subscription number to place an ad:</label> <br />
+        <input type="text" id="subscriptionNumber" name="subscriptionNumber" required> <br />
+        @if (ViewData["SubscriberInfo"] != null)
+        {
+            <div>
+                <p class="text-danger">@ViewData["SubscriberInfo"].ToString()</p>
+            </div>
+        }
+        <button type="submit">Check Subscriber</button>
+    </form>
+    <div>
+   <br />
+<div class="ads-section">
+    @await Html.PartialAsync("_AdsPartial")
+</div>
+        @if (ViewData["ConvertedPrice"] != null)
+        {
+            <div>
+                <p class="text-danger"> Product price conversion: @ViewData["ConvertedPrice"]</p>
+            </div>
+        }
+@if(Model.Subscriber.sub_subscriptionNumber != 0)
+            @await Html.PartialAsync("_SubscriberPartial")
+    </div>
+</div>

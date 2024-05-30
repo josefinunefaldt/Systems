@@ -1,0 +1,10 @@
+﻿<h2>Import Subscribers from XML</h2>
+
+<form asp-controller="Ads" asp-action="ImportSubscribers" method="post" class="subscriber-import-form" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="file">Upload XML File:</label>
+        <input type="file" name="file" id="file" class="form-control-file" accept=".xml">
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Import</button>
+</form>

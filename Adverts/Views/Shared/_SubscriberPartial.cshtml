@@ -1,0 +1,100 @@
+﻿@model Adverts.ViewModel.AdvertViewModel;
+
+<h2>Edit Subscriber Information</h2>
+<form asp-controller="Ads" asp-action="UpdateSubscriber" method="post" class="subscriber-form">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label asp-for="@Model.Subscriber.sub_FirstName">First Name:</label>
+                <input asp-for="@Model.Subscriber.sub_FirstName" class="form-control mb-2" />
+                <span asp-validation-for="@Model.Subscriber.sub_FirstName" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="@Model.Subscriber.sub_LastName">Last Name:</label>
+                <input asp-for="@Model.Subscriber.sub_LastName" class="form-control mb-2" />
+                <span asp-validation-for="@Model.Subscriber.sub_LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label asp-for="@Model.Subscriber.sub_deliveryAddress">Delivery Address:</label>
+                <input asp-for="@Model.Subscriber.sub_deliveryAddress" class="form-control mb-2" />
+                <span asp-validation-for="@Model.Subscriber.sub_deliveryAddress" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="@Model.Subscriber.sub_PhoneNumber">Phone Number:</label>
+                <input asp-for="@Model.Subscriber.sub_PhoneNumber" class="form-control mb-2" />
+                <span asp-validation-for="@Model.Subscriber.sub_PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label asp-for="@Model.Subscriber.sub_postalCode">Postal Code:</label>
+                <input asp-for="@Model.Subscriber.sub_postalCode" class="form-control mb-2" />
+                <span asp-validation-for="@Model.Subscriber.sub_postalCode" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="@Model.Subscriber.sub_socialSecurityNumber">Social Security Number:</label>
+                <input asp-for="@Model.Subscriber.sub_socialSecurityNumber" class="form-control mb-2" />
+                <span asp-validation-for="@Model.Subscriber.sub_socialSecurityNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="hidden" asp-for="@Model.Subscriber.sub_subscriptionNumber" />
+                <input type="hidden" asp-for="@Model.Subscriber.sub_id" />
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Update Subscriber</button>
+    </div>
+</form>
+
+<form asp-controller="Ads" asp-action="UpdateSubscriber" method="post">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+       
+                <input type="hidden" asp-for="@Model.Subscriber.sub_FirstName" class="form-control mb-2" />
+                
+            </div>
+            <div class="col-md-6">
+             
+                <input type="hidden" asp-for="@Model.Subscriber.sub_LastName" class="form-control mb-2" />
+            
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+
+                <input type="hidden" asp-for="@Model.Subscriber.sub_deliveryAddress" class="form-control mb-2" />
+               
+            </div>
+            <div class="col-md-6">
+          
+                <input type="hidden" asp-for="@Model.Subscriber.sub_PhoneNumber" class="form-control mb-2" />
+         
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+          
+                <input type="hidden" asp-for="@Model.Subscriber.sub_postalCode" class="form-control mb-2" />
+     
+            </div>
+            <div class="col-md-6">
+             
+                <input type="hidden" asp-for="@Model.Subscriber.sub_socialSecurityNumber" class="form-control mb-2" />
+    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="hidden" asp-for="@Model.Subscriber.sub_subscriptionNumber" />
+                <input type="hidden" asp-for="@Model.Subscriber.sub_id" />
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Go straight to post ad</button>
+    </div>
+</form>
+
+

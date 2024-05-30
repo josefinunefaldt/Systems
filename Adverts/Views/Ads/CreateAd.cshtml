@@ -1,0 +1,28 @@
+﻿@model Adverts.Data.Entities.Ads;
+
+<h2>Create Ad</h2>
+<form asp-controller="Ads" asp-action="CreateAd" method="post">
+
+    <div class="form-group">
+        <label for="ad_headline">Headline:</label>
+        <input class="form-control" type="text" asp-for="ad_headline" placeholder="Headline" />
+        <span asp-validation-for="ad_headline" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="ad_content">Content:</label>
+        <input class="form-control" type="text" asp-for="ad_content" placeholder="Content" />
+        <span asp-validation-for="ad_content" class="text-danger"></span>
+    </div>
+    
+    <input type="hidden" asp-for="ad_advertismentPrice" />
+    <div class="form-group">
+        <label for="ad_productPrice">Product Price:</label>
+        <input class="form-control" type="text" asp-for="ad_productPrice" placeholder="Product Price" />
+        <span asp-validation-for="ad_productPrice" class="text-danger"></span>
+    </div>
+
+    <input type="hidden" asp-for="ad_advertisers_id" />
+
+    <button class="btn btn-primary" type="submit">Create</button>
+</form>

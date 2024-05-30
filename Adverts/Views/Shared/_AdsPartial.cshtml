@@ -1,0 +1,65 @@
+﻿@model Adverts.ViewModel.AdvertViewModel;
+
+ <div class="ad-container">
+    @{
+        var BusinessAds = Model.AdsList.Where(ad => ad.ad_advertismentPrice == 40).ToList();
+        var subscriberAds = Model.AdsList.Where(ad => ad.ad_advertismentPrice == 0).ToList();
+    }
+
+    @if (BusinessAds.Any())
+    {
+        <h2>Business Ads</h2> <br />
+        foreach (var ad in BusinessAds)
+        {
+            <div class="ad-item">
+                <p><strong>Headline:</strong> @ad.ad_headline</p>
+                <p><strong>Content:</strong> @ad.ad_content</p>
+                <p><strong>Product Price:</strong> @ad.ad_productPrice</p>
+                <form method="post" action="@Url.Action("ConvertProductPrice", "Ads")">
+                    <input type="hidden" name="originalPrice" value="@ad.ad_productPrice">
+                 
+                    <input type="text" name="targetCurrency">
+
+                    <button type="submit">Convert Price</button>
+                </form>
+            </div>
+            <hr class="fw-bold">
+        }
+    }
+
+    @if (subscriberAds.Any())
+    {
+        <h2>Subsbriber Ads</h2> <br />
+        foreach (var ad in subscriberAds)
+        {
+            <div class="ad-item">
+                <p><strong>Headline:</strong> @ad.ad_headline</p>
+                <p><strong>Content:</strong> @ad.ad_content</p>
+                <p><strong>Product Price:</strong> @ad.ad_productPrice</p>
+
+                <form method="post" action="@Url.Action("ConvertProductPrice", "Ads")">
+                    <input type="hidden" name="originalPrice" value="@ad.ad_productPrice">
+                
+                    <input type="text" name="targetCurrency">
+
+                    <button type="submit">Convert Price</button>
+                </form>
+            </div>
+            <hr class="fw-bold">
+        }
+    }
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
